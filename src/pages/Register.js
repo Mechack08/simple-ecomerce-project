@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   width: 100vw;
@@ -18,6 +19,7 @@ const Wrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
   width: 40%;
   border-radius: 5px;
+  ${mobile({ width: "85%" })}
 `;
 
 const Title = styled.h1`
@@ -29,6 +31,7 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Input = styled.input`

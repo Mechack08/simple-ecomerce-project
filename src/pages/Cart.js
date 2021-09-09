@@ -4,10 +4,13 @@ import { Add, Remove } from "@material-ui/icons";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
+
 const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -32,7 +35,10 @@ const TopButton = styled.button`
   color: ${(props) => props.type === "filled" && "#FFF"};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({ display: "none" })}
+`;
+
 const TopText = styled.span`
   text-decoration: underline;
   cursor: pointer;
@@ -42,6 +48,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Info = styled.div`
@@ -51,6 +58,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const ProductDetail = styled.div`
@@ -60,6 +68,7 @@ const ProductDetail = styled.div`
 
 const Image = styled.img`
   width: 200px;
+  ${mobile({ height: "80%" })}
 `;
 
 const Details = styled.div`
@@ -69,15 +78,20 @@ const Details = styled.div`
   justify-content: space-around;
 `;
 
-const ProductName = styled.span``;
+const ProductName = styled.span`
+  ${mobile({ fontSize: "14px" })}
+`;
 
-const ProductId = styled.span``;
+const ProductId = styled.span`
+  ${mobile({ fontSize: "14px" })}
+`;
 
 const ProductColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: ${(props) => props.color};
+  ${mobile({ width: "15px", height: "15px" })}
 `;
 
 const ProductSize = styled.span``;
@@ -99,11 +113,13 @@ const ProductAmountContainer = styled.div`
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
 `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 300;
+  ${mobile({ marginBottom: "20px" })}
 `;
 
 const Hr = styled.hr`
